@@ -17,7 +17,7 @@ package v20170320
 import (
     "encoding/json"
 
-    tchttp "github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common/http"
+    tchttp "github.com/anchnet/tencentcloud-sdk-go/tencentcloud/common/http"
 )
 
 type AssociateSecurityGroupsRequest struct {

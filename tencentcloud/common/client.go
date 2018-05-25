@@ -1,12 +1,12 @@
 package common
 
 import (
+	"fmt"
+	tchttp "github.com/anchnet/tencentcloud-sdk-go/tencentcloud/common/http"
+	"github.com/anchnet/tencentcloud-sdk-go/tencentcloud/common/profile"
 	"log"
 	"net/http"
 	"time"
-
-	tchttp "github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common/http"
-	"github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common/profile"
 )
 
 type Client struct {
@@ -42,6 +42,7 @@ func (c *Client) Send(request tchttp.Request, response tchttp.Response) (err err
 	if request.GetHttpMethod() == "POST" {
 		httpRequest.Header["Content-Type"] = []string{"application/x-www-form-urlencoded"}
 	}
+	fmt.Println(request.GetUrl())
 	//log.Printf("[DEBUG] http request=%v", httpRequest)
 	httpResponse, err := c.httpClient.Do(httpRequest)
 	if err != nil {

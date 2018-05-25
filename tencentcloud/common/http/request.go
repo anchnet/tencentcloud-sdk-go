@@ -15,8 +15,8 @@ const (
 	POST = "POST"
 	GET  = "GET"
 
-	RootDomain = "tencentcloudapi.com"
-	Path       = "/"
+	RootDomain = "api.qcloud.com"
+	Path       = "/v2/index.php"
 )
 
 type Request interface {

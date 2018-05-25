@@ -18,12 +18,12 @@
 
 推荐使用语言自带的工具安装 SDK ：
 
-    go get -u github.com/tencentcloud/tencentcloud-sdk-go
+    go get -u github.com/anchnet/tencentcloud-sdk-go
 
 
 ## 通过源码安装
 
-前往 [Github 代码托管地址](https://github.com/tencentcloud/tencentcloud-sdk-go) 下载最新代码，解压后安装到 $GOPATH/src/github.com/tencentcloud 目录下。
+前往 [Github 代码托管地址](https://github.com/anchnet/tencentcloud-sdk-go) 下载最新代码，解压后安装到 $GOPATH/src/github.com/tencentcloud 目录下。
 
 # 示例
 
@@ -37,10 +37,10 @@ package main
 import (
         "fmt"
 
-        "github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common"
-        "github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common/errors"
-        "github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common/profile"
-        cvm "github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm/v20170312"
+        "github.com/anchnet/tencentcloud-sdk-go/tencentcloud/common"
+        "github.com/anchnet/tencentcloud-sdk-go/tencentcloud/common/errors"
+        "github.com/anchnet/tencentcloud-sdk-go/tencentcloud/common/profile"
+        cvm "github.com/anchnet/tencentcloud-sdk-go/tencentcloud/cvm/v20170312"
 )
 
 func main() {
