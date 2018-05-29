@@ -66,31 +66,30 @@ func (c *Client) DescribeDealsByCond(request *DescribeDealsByCond) (response *De
 	return
 }
 
-/*
-func NewDescribeBillsRequest() (request *DescribeBillsRequest) {
-	request = &DescribeBillsRequest{
+func NewDescribeUserInfoRequest() (request *DescribeUserInfoRequest) {
+	request = &DescribeUserInfoRequest{
 		BaseRequest: &tchttp.BaseRequest{},
 	}
-	request.Init().WithApiInfo("trade", APIVersion, "DescribeBills")
+	request.Init().WithApiInfo("trade", APIVersion, "DescribeUserInfo")
 	return
 }
 
-func NewDescribeBillsResponse() (response *DescribeBillsResponse) {
-	response = &DescribeBillsResponse{
+func NewDescribeUserInfoResponse() (response *DescribeUserInfoResponse) {
+	response = &DescribeUserInfoResponse{
 		BaseResponse: &tchttp.BaseResponse{},
 	}
 	return
 }
 
-func (c *Client) DescribeBills(request *DescribeBillsRequest) (response *DescribeBillsResponse, err error) {
+func (c *Client) DescribeUserInfo(request *DescribeUserInfoRequest) (response *DescribeUserInfoResponse, err error) {
 	if request == nil {
-		request = NewDescribeBillsRequest()
+		request = NewDescribeUserInfoRequest()
 	}
-	response = NewDescribeBillsResponse()
+	response = NewDescribeUserInfoResponse()
 	err = c.Send(request, response)
 	return
 }
-*/
+
 /*
 func NewAssociateInstancesKeyPairsRequest() (request *AssociateInstancesKeyPairsRequest) {
 	request = &AssociateInstancesKeyPairsRequest{

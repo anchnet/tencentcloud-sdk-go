@@ -17,7 +17,6 @@ package v20170312
 import (
 	"encoding/json"
 	tchttp "github.com/anchnet/tencentcloud-sdk-go/tencentcloud/common/http"
-	//"time"
 )
 
 type DescribeDealsByCond struct {
@@ -74,55 +73,48 @@ type Deal struct {
 	ProjectId      string `json:"projectId" name:"projectId"`
 }
 
-/*
-type DescribeBillsRequest struct {
+type DescribeUserInfoRequest struct {
 	*tchttp.BaseRequest
-	PayerUin  string `json:"payerUin" name:"payerUin"`
-	PayType   string `json:"payType" name:"payType"`
-	StartTime string `json:"startTime" name:"startTime"`
-	EndTime   string `json:"endTime" name:"endTime"`
-	Order     string `json:"order" name:"order"`
 }
 
-func (r *DescribeBillsRequest) ToJsonString() string {
+func (r *DescribeUserInfoRequest) ToJsonString() string {
 	b, _ := json.Marshal(r)
 	return string(b)
 }
 
-func (r *DescribeBillsRequest) FromJsonString(s string) error {
+func (r *DescribeUserInfoRequest) FromJsonString(s string) error {
 	return json.Unmarshal([]byte(s), &r)
 }
 
-type DescribeBillsResponse struct {
+type DescribeUserInfoResponse struct {
+	*tchttp.BaseResponse
+	Code        int    `json:"code" name:"code"`
+	Message     string `json:"message" name:"message"`
+	BalanceInfo int    `json:"balanceInfo" name:"balanceInfo"`
+}
+
+type DescribeAccountBalanceRequest struct {
+	*tchttp.BaseRequest
+}
+
+func (r *DescribeAccountBalanceRequest) ToJsonString() string {
+	b, _ := json.Marshal(r)
+	return string(b)
+}
+
+func (r *DescribeAccountBalanceRequest) FromJsonString(s string) error {
+	return json.Unmarshal([]byte(s), &r)
+}
+
+type DescribeAccountBalanceResponse struct {
 	*tchttp.BaseResponse
 	Code     int    `json:"code" name:"code"`
 	Message  string `json:"message" name:"message"`
-	CodeDesc string `json:"codeDesc" name:"codeDesc"`
-	Data     *struct {
-		Total int `json:"total" name:"total"`
-		In    int `json:"in" name:"in"`
-		Out   int `json:"out" name:"productCodeList" list`
-
-		Data []*Bill `json:"data" name:"data" list`
-		// 唯一请求ID，每次请求都会返回。定位问题时需要提供该次请求的RequestId。
-	} `json:"data"`
+	UserInfo *struct {
+		Name       string `json:"name" name:"name"`
+		IsOwner    int    `json:"isOwner" name:"isOwner"`
+		MailStatus int    `json:"mailStatus" name:"mailStatus"`
+		Mail       string `json:"mail" name:"mail"`
+		Phone      string `json:"phone" name:"phone"`
+	} `json:"userInfo"`
 }
-
-type Bill struct {
-	FeeId   string `json:"feeId" name:"feeId"`
-	BillId  string `json:"payMode" name:"payMode"`
-	Status  string `json:"status" name:"status"`
-	PayMode string `json:"payMode" name:"payMode"`
-	PayType string `json:"payType" name:"payType"`
-
-	OperationTime string `json:"operationTime" name:"operationTime"`
-	OperationInfo string `json:"operationInfo" name:"operationInfo"`
-	Amount        string `json:"amount" name:"amount"`
-	Balance       string `json:"balance" name:"balance"`
-
-	CalcUnit       string `json:"calcUnit" name:"calcUnit"`
-	ActionType     string `json:"actionType" name:"actionType"`
-	ProductCode    string `json:"productCode" name:"productCode"`
-	SubProductCode string `json:"subProductCode" name:"subProductCode"`
-}
-*/
