@@ -44,7 +44,7 @@ func NewDescribeDealsByCond() (request *DescribeDealsByCond) {
 	request = &DescribeDealsByCond{
 		BaseRequest: &tchttp.BaseRequest{},
 		PageSize:    20,
-		Status:      3,
+		Status:      4,
 	}
 	request.Init().WithApiInfo("trade", APIVersion, "DescribeDealsByCond")
 	return

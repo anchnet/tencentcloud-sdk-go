@@ -123,7 +123,7 @@ type DescribeBillsResponse struct {
 
 type Bill struct {
 	FeeId   string `json:"feeId" name:"feeId"`
-	BillId  string `json:"payMode" name:"payMode"`
+	BillId  string `json:"billId" name:"billId"`
 	Status  string `json:"status" name:"status"`
 	PayMode string `json:"payMode" name:"payMode"`
 	PayType string `json:"payType" name:"payType"`

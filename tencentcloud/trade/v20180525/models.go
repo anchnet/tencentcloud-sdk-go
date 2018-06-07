@@ -26,7 +26,7 @@ type DescribeDealsByCond struct {
 	StartTime string `json:"startTime" name:"startTime"`
 	EndTime   string `json:"endTime" name:"endTime"`
 	Status    int    `json:"status" name:"status"`
-	DealId    int    `json:"dealId" name:"dealId"`
+	DealId    string `json:"dealId" name:"dealId"`
 }
 
 func (r *DescribeDealsByCond) ToJsonString() string {
@@ -86,7 +86,7 @@ func (r *DescribeUserInfoRequest) FromJsonString(s string) error {
 	return json.Unmarshal([]byte(s), &r)
 }
 
-type DescribeUserInfoResponse struct {
+type DescribeAccountBalanceResponse struct {
 	*tchttp.BaseResponse
 	Code        int    `json:"code" name:"code"`
 	Message     string `json:"message" name:"message"`
@@ -106,13 +106,13 @@ func (r *DescribeAccountBalanceRequest) FromJsonString(s string) error {
 	return json.Unmarshal([]byte(s), &r)
 }
 
-type DescribeAccountBalanceResponse struct {
+type DescribeUserInfoResponse struct {
 	*tchttp.BaseResponse
 	Code     int    `json:"code" name:"code"`
 	Message  string `json:"message" name:"message"`
 	UserInfo *struct {
 		Name       string `json:"name" name:"name"`
-		IsOwner    int    `json:"isOwner" name:"isOwner"`
+		IsOwner    string `json:"isOwner" name:"isOwner"`
 		MailStatus int    `json:"mailStatus" name:"mailStatus"`
 		Mail       string `json:"mail" name:"mail"`
 		Phone      string `json:"phone" name:"phone"`
